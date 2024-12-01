@@ -1,0 +1,492 @@
+    /* Principal */
+body {
+    margin: 0;
+    background-image: url("../Recursos/FNaFFreddy_Menu.webp");
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-size: cover;
+    color: white;
+    font-family: Arial, sans-serif;
+    overflow-x: hidden; /* Bloqueja el desplaçament horizontal */
+    overflow-y: auto;   /* No bloqueja res per el desplaçament vertical */
+}
+
+canvas {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+}
+
+
+
+    /* Separació Contents */
+
+
+    /* Menú de navegación */
+nav {
+    font-family: Font_Menu;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    display: flex;
+    justify-content: space-between; /* Logo, enllaços i menú separats */
+    align-items: center;
+    padding: 10px 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5); /* Sombra elegant */
+    z-index: 2;
+}
+
+    /* Logo del menú */
+.logo-container {
+    position: relative;
+    display: inline-block;
+}
+
+.nav-logo {
+    height: 40px;
+    transition: filter 0.3s ease; /* Suavitza l'efecte hover */
+}
+
+.logo-container:hover .nav-logo {
+    filter: brightness(50%); /* logo efecte dramàtic */
+}
+
+    /* Efecte de sang */
+.logo-container::after,
+.logo-container::before,
+.logo-container .extra-drip {
+    content: '';
+    position: absolute;
+    width: 5px;
+    height: 5px;
+    background-color: red; /* Color de la "sang" */
+    border-radius: 50%; /* Gotes circulars */
+    opacity: 0;
+    animation: drip 1.5s infinite ease-in-out;
+}
+
+.logo-container::before {
+    top: 60%;
+    left: 45%;
+    animation-delay: 0.3s; /* Gota secundaria */
+}
+
+.logo-container .extra-drip {
+    top: 70%;
+    left: 50%;
+    animation-delay: 0.6s; /* Gota adicional */
+}
+
+    /* Animació de les gotes */
+@keyframes drip {
+    0% {
+        opacity: 0;
+        transform: translate(-50%, -50%) scale(0);
+    }
+    30% {
+        opacity: 1;
+        transform: translate(-50%, -50%) scale(1);
+    }
+    100% {
+        opacity: 0;
+        transform: translate(-50%, 100px) scale(0.5); /* Baixa */
+    }
+}
+
+    /* Centrar els enllaços de navegació */
+nav div.nav-links {
+    flex-grow: 1; /* Ocupa tot l'espai disponible entre logo y menú */
+    display: flex;
+    justify-content: center; /* Centrar els enllaços horizontalment */
+    gap: 20px; /* Separació entre enllaços */
+}
+
+nav div.nav-links a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    padding: 10px 20px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+nav div.nav-links a:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+    color: #ff0000;
+    border-radius: 5px;
+}
+
+    /* Icon de menu "hamburguesa" */
+.menu-icon {
+    width: 30px;
+    height: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    cursor: pointer;
+}
+
+.menu-icon span {
+    display: block;
+    height: 4px;
+    width: 100%;
+    background-color: white;
+    border-radius: 2px;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+/* Estat actiu (opcional animació) */
+.menu-icon.active span:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+}
+
+.menu-icon.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.menu-icon.active span:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+}
+
+/* Menú desplegable */
+.dropdown {
+    position: relative;
+    margin-left: auto;
+    margin-right: 40px;
+}
+
+.dropdown-content {
+    display: none; /* Ocultar per defecte */
+    position: absolute;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.9);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+    min-width: 150px;
+    z-index: 5;
+    border-radius: 5px;
+    overflow: hidden;
+    animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.dropdown-content a {
+    display: block;
+    padding: 10px;
+    text-decoration: none;
+    color: white;
+    transition: background-color 0.3s;
+}
+
+.dropdown-content a:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+    /* Veure menú desplegable al fer clic */
+.dropdown.show .dropdown-content {
+    display: block;
+}
+
+
+
+/* Separació Contents */
+
+
+    /* Contingut principal */
+.content {
+    position: relative;
+    z-index: 1; /* Sobre el static noise */
+    text-align: center;
+    padding: 100px 20px; /* Espai debaix del menú */
+}
+
+#fnaf_titol {
+    margin-top: -120px;
+    margin-bottom: -75px;
+}
+
+.content h1 {
+    font-size: 48px;
+}
+
+.content p {
+    font-size: 18px;
+    line-height: 1.6;
+}
+
+
+/* Separació Contents */
+
+
+
+    /* Forms */
+
+#formbody {
+    margin: 0;
+    background-image: url("../Recursos/FNaFFreddy_Menu.webp");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    color: white;
+    font-family: Arial, sans-serif;
+    overflow-y: auto; /* Permite desplazamiento vertical */
+}
+
+.contentform {
+    position: relative;
+    z-index: 1; /* Sobre el static noise */
+    text-align: center;
+    padding: 150px 20px; /* Añade espacio para evitar que el menú o el footer lo corten */
+}
+
+.form-container {
+    background: linear-gradient(145deg, #1c1c1c, #0a0a0a);
+    border: 2px solid #660000;
+    box-shadow: 0 0 15px #660000;
+    border-radius: 10px;
+    padding: 20px;
+    width: 100%;
+    max-width: 500px; /* Limita el tamaño del formulario */
+    animation: flicker 3s infinite;
+}
+
+.form-container2 {
+    font-family: 'Courier New', Courier, monospace;
+    margin: 0 auto;
+    padding: 50px 20px; /* Añade espacio adicional para mayor separación */
+    display: flex;
+    justify-content: center;
+    align-items: flex-start; /* Alinea el formulario al inicio */
+    min-height: calc(100vh - 150px); /* Deja espacio para el menú y el footer */
+}
+
+#formfooter {
+    position: relative;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 0;
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.5);
+    color: white;
+    font-size: 14px;
+    margin-top: 20px; /* Añade espacio entre el formulario y el pie */
+}
+
+@keyframes flicker {
+    0%, 100% {
+        box-shadow: 0 0 15px #660000;
+    }
+    50% {
+        box-shadow: 0 0 20px #990000;
+    }
+}
+
+.form-container h2 {
+    text-align: center;
+    color: #cc0000;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #660000;
+    border-radius: 5px;
+    background-color: #1c1c1c;
+    color: #f5f5f5;
+}
+
+.form-group textarea {
+    resize: none;
+}
+
+.level-buttons {
+    display: flex;
+    gap: 10px;
+}
+
+.level-buttons button {
+    flex: 1;
+    padding: 10px;
+    border: 2px solid #660000;
+    background-color: #1c1c1c;
+    color: #f5f5f5;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, box-shadow 0.3s;
+}
+
+.level-buttons button:hover {
+    background-color: #cc0000;
+    box-shadow: 0 0 10px #cc0000;
+}
+
+.form-buttons {
+    display: flex;
+    justify-content: space-between;
+}
+
+.form-buttons button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.form-buttons .submit-btn {
+    background-color: #cc0000;
+    color: #f5f5f5;
+    transition: background-color 0.3s;
+}
+
+.form-buttons .reset-btn {
+    background-color: #333;
+    color: #f5f5f5;
+    transition: background-color 0.3s;
+}
+
+.form-buttons .submit-btn:hover {
+    background-color: #990000;
+}
+
+.form-buttons .reset-btn:hover {
+    background-color: #555;
+}
+
+
+
+
+/* Separació Contents */
+
+
+/* Footer */
+footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 0;
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.5);
+    z-index: 2;
+    color: white;
+    font-size: 14px;
+}
+
+#creadors {
+    font-family: Font_2;
+}
+
+    /* Imatge en la esquina inferior dreta */
+.footer-img {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 150px;
+    height: 40px;
+    z-index: 3;
+}
+
+.footer-img img {
+    width: 100%;
+    height: 125%;
+    object-fit: cover;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.footer-img img:hover {
+    transform: scale(1.1); /* Aumenta una mica el tamany al passar el ratolí */
+    box-shadow: 0 4px 10px rgba(255, 255, 255, 0.5);
+}
+
+/* Fonts Personalitzades */
+@font-face {
+    font-family: Font_Menu;
+    src: url(../Recursos/font_menu.ttf);
+}
+
+@font-face {
+    font-family: Font_2;
+    src: url(../Recursos/font_2.ttf);
+}
+
+    /*pantalla de carrega*/
+    /* Reset */
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        font-family: Arial, sans-serif;
+        overflow: hidden; /* Prevent scrolling during loading */
+    }
+
+    #loading-screen {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(135deg, #2c2c2c, #7a7a7a);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        z-index: 10;
+    }
+
+    .loading-bar-container {
+        width: 80%;
+        max-width: 400px;
+        height: 10px;
+        background: rgba(255, 255, 255, 0.2);
+        border-radius: 5px;
+        overflow: hidden;
+        margin-bottom: 20px;
+    }
+
+    .loading-bar {
+        width: 0%;
+        height: 100%;
+        background: #fff;
+        transition: width 0.2s ease;
+    }
+
+    #main-content {
+        display: none; /* Hide content initially */
+        text-align: center;
+        padding: 20px;
+    }
+

@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="cat">
+    <head>
+        <title>Form</title>
+        <meta name="author" content="Roberto Duca i Eidur Prevost"> <!--Autor de la pàgina-->
+        <meta charset="UTF-8"> <!--Codificació 8 bits UTF-->
+        <meta name="keywords" content="FNaF HTML CSS Projecte Roberto Eidur Content Index Form Taules Imatges Videos Audio"> <!--Paraules Clau-->
+        <meta name="description" content="FNaF Pàgina Web"> <!--Descripció Básica-->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!--Compatible i Pàgina Responsiva-->
+        <link rel="stylesheet" href="./CSS/CSS_EstilsFNaF.css" type="text/css" > <!--CSS Extern-->
+        
+    </head>
+
+    <body id="formbody">
+                <!-- Static Noise Efecte i Scripts JS -->
+            <canvas id="staticCanvas"></canvas>
+            <script src="./CSS/Static_Noise.js"></script>
+            <script src="./CSS/menu.js"></script>
+            <script src="./CSS/form.js"></script>
+            
+                <!-- Menú de navegació -->
+        <nav>
+                    <!-- Logo -->
+            <div class="logo-container">
+                <a href="./index.html">
+                <img src="./Recursos/alfredo.png" alt="alfredo" class="nav-logo">
+                </a>
+                <div class="extra-drip"></div> <!-- Sang adicional -->
+            </div>
+            
+                    <!-- Enllaços -->
+            <div class="nav-links">
+                <a href="./index.html">Inici</a>
+                <a href="./content1.html">Continguts</a>
+                <a href="./content2.html">Historia</a>
+                <a href="./contacte.html">Contacte</a>
+                <a href="./form.html">Accedir</a>
+            </div>
+            
+                    <!-- Menú desplegable -->
+            <div class="dropdown">
+                <div class="menu-icon">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+                <div class="dropdown-content">
+                    <a href="#seccion1">Seccio 1</a>
+                    <a href="#seccion2">Seccio 2</a>
+                    <a href="#seccion3">Seccio 3</a>
+                </div>
+            </div>
+        </nav>
+
+            <!-- Separació Contents -->
+
+
+
+            <!-- Contingut de la pàgina -->
+        <div id="contentform">
+            <header> <img id="fnaf_titol" src="./Recursos/fnaf.png" alt="titol_fnaf"> </header>
+            <br>
+            <div class="form-container2">
+                <div class="form-container">
+                        <h2>Formulari d'accès V.I.P</h2>
+                    <form>
+                        <div class="form-group">
+                            <label for="nom">Nom i Cognoms:</label>
+                            <input type="text" id="nom" name="nom" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="data-naixement">Data de naixement:</label>
+                            <input type="date" id="data-naixement" name="data-naixement" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Nivell acadèmic:</label>
+                        <div class="level-buttons">
+                            <button type="button" data-value="No Cursats">No Cursats</button>
+                            <button type="button" data-value="ESO">ESO</button>
+                            <button type="button" data-value="Batxillerat">Batxillerat</button>
+                            <button type="button" data-value="Cicle Mitjà">Cicle Mitjà</button>
+                            <button type="button" data-value="Cicle Superior">Cicle Superior</button>
+                            <button type="button" data-value="Universitat">Universitat</button>
+                        </div>
+                            <input type="hidden" id="nivell-academic" name="nivell-academic" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="temes-interes">Temes d'interès:</label>
+                            <select id="temes-interes" name="temes-interes" multiple>
+                                <option value="FnAF 1">FnAF 1</option>
+                                <option value="FnAF 2">FnAF 2</option>
+                                <option value="FnAF 3">FnAF 3</option>
+                                <option value="FnAF 4">FnAF 4</option>
+                                <option value="altres">Altres</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="observacions">Observacions:</label>
+                            <textarea id="observacions" name="observacions" rows="8" maxlength="50"></textarea>
+                        </div>
+                        <div class="form-buttons">
+                            <button type="submit" class="submit-btn">Envia</button>
+                            <button type="reset" class="reset-btn">Reinicia</button>
+                        </div>
+                    </form>
+            </div>
+        </div>
+
+
+
+            <!-- Separació Contents -->
+
+            <!-- Footer -->
+                <!-- text -->
+            <footer id="formfooter">
+                <p>&COPY; &nbsp;</p><p id="creadors">Roberto Duca i Eidur Prevost 1rA SMX</p>
+            </footer>
+
+                <!-- Imatge -->
+            <div class="footer-img">
+                <a href="https://agora.xtec.cat/ies-sabadell/" target="_blank">
+                    <img src="./Recursos/logo_ins.png" alt="Enllaç IES SABADELL">
+                </a>
+            </div>
+    </body>
+</html>
+    
